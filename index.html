@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <title>Cinema</title>
+    <link rel="stylesheet" href="layouts/dist/style.css">
+</head>
+<body>
+    <header>
+        <div class="container-logo">
+            <img src="imgs/icon-cinema.png" alt="Logo">
+            <h1>Cinema</h1>
+        </div>
+        <div class="container-search">
+            <input class="search" type="text" placeholder="search...">
+            <img src="imgs/search.svg" alt="" class="search-icon">
+        </div>
+        <div class="container-user">
+            <img src="imgs/account_avatar.svg" alt="user">
+            <a href="">Account</a>
+        </div>
+    </header>
+    <main>
+        <div class="container-sucu">
+            <label for="sucu">Sucursal: </label>
+            <select name="sucu" id="sucu-droplist">
+                <option value="temperley">Temperley</option>
+                <option value="almagro">Almagro</option>
+                <option value="sanisidrio">San Isidro</option>
+                <option value="castelar">Castelar</option>
+            </select>
+        </div>
+        <div class="grid-container">
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula1.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Uncharted</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula2.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Thor - Amor y Trueno</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula3.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Star Wars - The Last Jedi</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula4.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">JAWS</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula5.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">The Exorcist</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula6.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Oppenheimer</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula7.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Barbie</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula8.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Diego</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula9.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Muchachos</h2>
+            </article>
+            <article class="movie-card">
+                <img src="imgs/movies/pelicula1.jpg" alt="Película Imagen" class="movie-image">
+                <h2 class="tittle-movie">Uncharted</h2>
+            </article>
+        </div>
+        
+            <div class="container-info">
+                <section class="movie-select">
+                    <img src="" alt="Movie Info" class="movie-selectimg">
+                </section>
+                <section class="info-movie">
+                    <h2 class="tittle-info"></h2>
+                    <p class="description-movie">Descripcion de la Pelicula****************************</p>
+                    <p><strong>Duracion:</strong> 92 min</p>
+                    <p><strong>Genero:</strong> Terror</p>
+                    <p><strong>Director:</strong> Jorge Perez</p>
+                    <p><strong>Reparto:</strong> Goku, Majin Buu, Obito, Kakashi, El sapo pepe, El Diego.</p>
+                    <section class="info-timetables">
+                        <label for="radio-btn">Horarios: </label>
+                        <input type="radio" name="horario" id="radio-btn" value="09:00">09:00
+                        <input type="radio" name="horario" id="radio-btn" value="13:15">13:15
+                        <input type="radio" name="horario" id="radio-btn" value="19:20">19:20
+                        <input type="radio" name="horario" id="radio-btn" value="23:00">23:00
+                    </section>
+                </section>
+                <section class="container-buttons">
+                    <button class="btn-buy">Comprar Entradas</button>
+                </section>
+                <box-icon class="btn-close" name='x-circle'></box-icon>
+            </div>
+        
+        <!-- Agregar más secciones de películas según sea necesario -->
+    </main>
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

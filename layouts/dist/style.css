@@ -1,0 +1,251 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  font-family: "Reddit Mono", monospace;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 5%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+header .container-logo {
+  display: flex;
+  background-color: white;
+  width: 12%;
+  height: 100%;
+  color: black;
+  border-radius: 0px 50px 50px 0px;
+  align-items: center;
+}
+header .container-logo img {
+  width: 90px;
+  height: 90px;
+}
+header .container-search {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .container-search .search {
+  width: 80%;
+  height: 70%;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  padding-left: 1rem;
+  outline: none;
+  border: none;
+}
+header .container-search .search-icon {
+  width: 30px;
+  translate: calc(-32px);
+  cursor: pointer;
+}
+header .container-search .search-icon:active {
+  transform: scale(1.1);
+}
+header .container-user {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 12%;
+  height: 100%;
+  color: black;
+  border-radius: 50px 0px 0px 50px;
+  align-items: center;
+}
+header .container-user img {
+  width: 50px;
+  height: 50px;
+}
+header .container-user a {
+  padding-left: 30px;
+  font-size: 2vh;
+}
+
+main {
+  padding-top: 2.5%;
+  background-color: #333;
+  z-index: 10;
+}
+main.pointer-e:not(.container-info) {
+  pointer-events: none;
+}
+main .container-sucu {
+  width: 100%;
+  height: 5vh;
+  background-color: gray;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+main .container-sucu label {
+  padding-left: 10%;
+}
+main .container-sucu #sucu-droplist {
+  border-radius: 10px;
+  width: 15vh;
+  padding-left: 1rem;
+  height: 80%;
+  font-size: 1.2rem;
+}
+main .container-sucu #sucu-droplist option:hover {
+  cursor: pointer;
+}
+main .grid-container {
+  width: 80%;
+  height: 100%;
+  display: grid;
+  padding-top: 20px;
+  padding-left: 10%;
+  color: white;
+  /* Crear una cuadrícula de 3 columnas */
+  grid-auto-rows: 30rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 20px;
+  /* Espacio entre las películas */
+}
+main .grid-container .movie-card {
+  background-color: #520a0a;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  /* Centrar el contenido */
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+main .grid-container .movie-card:hover {
+  transform: scale(1.09);
+  background-color: #661d1d;
+}
+main .grid-container .movie-card:active {
+  background-color: #1f0c0c;
+}
+main .grid-container .movie-card .movie-image {
+  max-width: 100%;
+  /* Ajustar la imagen al ancho del contenedor */
+  height: 80%;
+  /* Mantener la proporción de la imagen */
+  border-radius: 20px;
+}
+main .grid-container .movie-card .buy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: none;
+}
+main .grid-container .movie-card .show-times {
+  display: none;
+  /* Ocultar los horarios por defecto */
+}
+main .container-info {
+  visibility: hidden;
+  width: 100%;
+  height: 95%;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 5%;
+  overflow: hidden;
+  display: flex;
+}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale-down-center {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+main .container-info.show {
+  animation: scale-up-center 0.4s;
+  pointer-events: auto;
+  transition: opacity 0.5s ease, visibility 0s linear;
+  opacity: 1;
+}
+main .container-info.close {
+  animation: scale-down-center 0.4s;
+  transition: opacity 0.5s ease, visibility 0s linear;
+  opacity: 1;
+}
+main .container-info .movie-select {
+  max-height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container-info .movie-select .movie-selectimg {
+  width: 80%;
+  height: 80%;
+  box-shadow: 15px 15px 20px;
+}
+main .container-info .info-movie {
+  margin-left: 10%;
+  width: 50%;
+  height: 100%;
+  font-size: 1.5rem;
+}
+main .container-info .info-movie .info-timetables {
+  width: 100%;
+  height: 10%;
+  font-size: 1.5rem;
+}
+main .container-info .info-movie .info-timetables #radio-btn {
+  cursor: pointer;
+  background-color: gray;
+}
+main .container-info .info-movie .description-movie {
+  padding-bottom: 1rem;
+}
+main .container-info .info-movie p {
+  margin: 0;
+}
+main .container-info .btn-buy {
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .container-info .btn-buy:hover {
+  background-color: #c5c5c5;
+}
+main .container-info .btn-close {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: black;
+}
