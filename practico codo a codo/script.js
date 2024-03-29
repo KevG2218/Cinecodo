@@ -10,5 +10,9 @@ toggleButtons.forEach(button => {
             showTimes.style.display = 'none';
             this.textContent = 'Mostrar Horarios';
         }
+
+        document.querySelector('.back-button').addEventListener('click', function() {
+            window.location.href = 'CineCodo.html';
+        });
     });
 });
