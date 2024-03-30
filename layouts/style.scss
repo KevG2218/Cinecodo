@@ -79,9 +79,9 @@ header {
 }
 
 main {
-  padding-top: 2.5%;
-  background-color: #333;
+  padding-top: 2.5%;  
   z-index: 10;
+  background:linear-gradient(#808080 0%,#808080 15%,  #4d4d4d 33.33%, #191919 66.67%, #000000 100%);
   &.pointer-e {
     &:not(.container-info) {
       pointer-events: none;
