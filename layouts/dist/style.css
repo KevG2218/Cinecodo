@@ -220,6 +220,7 @@ main .container-info .info-movie .info-timetables {
   width: 100%;
   height: 10%;
   font-size: 1.5rem;
+  padding-top: 3rem;
 }
 main .container-info .info-movie .info-timetables #radio-btn {
   cursor: pointer;
