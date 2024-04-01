@@ -33,3 +33,19 @@ ctnInfo.addEventListener("animationend", function (event) {
     ctnInfo.classList.remove("show");
   }
 });
+
+/*inicio de sesion, aun incompleto 
+no funciona aun -- 
+
+document.addEventListener("DOMContentLoaded",function(){
+  document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username === "usuario" && password === "123") {
+      
+      window.location.href = "index.html";
+    }
+  });
+});
+*/

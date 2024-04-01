@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/cinecodo/layouts/dist/style.css">
+    <title class="login-title">Iniciar Sesión</title>
+</head>
+
+<body class="login-body">
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form" class="login-form">
+            <div class="form-group">
+                <label class="login-label" for="username">Usuario:</label>
+                <input class="login-input" type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label class="login-label" for="password">Contraseña:</label>
+                <input class="login-input" type="password" id="password" name="password" required>
+            </div>
+            <!--<button type="submit">Iniciar Sesión</button>
+            Esto esta comentado por que no logro encontrar la falla del codigo js 
+            lo reemplace por un <a> que salta el codigo de momento-->
+            <a href="index.html">iniciar sesion</a>
+        </form>
+        <p id="error-message" class="error-message"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
