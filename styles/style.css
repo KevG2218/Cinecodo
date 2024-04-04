@@ -15,7 +15,7 @@ header {
   overflow: hidden;
   width: 100%;
   height: 5%;
-  background-color: #333;
+  background-color: #262a2b;
   color: white;
   display: flex;
   align-items: center;
@@ -50,6 +50,7 @@ header .container-search .search {
   padding-left: 1rem;
   outline: none;
   border: none;
+  background-color: #3b3b3b;
 }
 header .container-search .search-icon {
   width: 30px;
@@ -81,7 +82,7 @@ header .container-user a {
 main {
   padding-top: 2.5%;
   z-index: 10;
-  background: linear-gradient(#808080 0%, #808080 15%, #4d4d4d 33.33%, #191919 66.67%, #000000 100%);
+  background: linear-gradient(#60686c 0%, #60686c 15%, #2a2d2f 33.33%, #161718 66.67%, #000000 100%);
 }
 main.pointer-e:not(.container-info) {
   pointer-events: none;
@@ -89,7 +90,7 @@ main.pointer-e:not(.container-info) {
 main .container-sucu {
   width: 100%;
   height: 5vh;
-  background-color: gray;
+  background-color: #60686c;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -99,6 +100,7 @@ main .container-sucu {
 }
 main .container-sucu label {
   padding-left: 10%;
+  color: white;
 }
 main .container-sucu #sucu-droplist {
   border-radius: 10px;
@@ -107,6 +109,8 @@ main .container-sucu #sucu-droplist {
   height: 80%;
   font-size: 1.2rem;
   cursor: pointer;
+  background-color: #3b3b3b;
+  color: white;
 }
 main .grid-container {
   width: 80%;
@@ -123,7 +127,7 @@ main .grid-container {
 }
 main .grid-container .movie-card {
   background-color: #520a0a;
-  border: 1px solid #ccc;
+  border: 1px solid #2a2d2f;
   border-radius: 20px;
   padding: 10px;
   text-align: center;
@@ -202,7 +206,7 @@ main .container-info .movie-select {
   align-items: center;
 }
 main .container-info .movie-select .movie-selectimg {
-  width: 80%;
+  width: 70%;
   height: 80%;
   box-shadow: 15px 15px 20px;
 }
