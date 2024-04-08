@@ -12,24 +12,24 @@ body {
 
 header {
   position: fixed;
-  overflow: hidden;
   width: 100%;
   height: 5%;
+  display: flex;
   background-color: #262a2b;
   color: white;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1;
 }
 header .container-logo {
-  display: flex;
-  background-color: white;
   width: 12%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
   color: black;
   border-radius: 0px 50px 50px 0px;
-  align-items: center;
 }
 header .container-logo img {
   width: 90px;
@@ -46,7 +46,7 @@ header .container-search .search {
   width: 80%;
   height: 70%;
   font-size: 1.2rem;
-  border-radius: 20px;
+  border-radius: 50px 50px 50px 50px;
   padding-left: 1rem;
   outline: none;
   border: none;
@@ -83,7 +83,12 @@ header .container-user a {
 main {
   padding-top: 2.5%;
   z-index: 10;
-  background: linear-gradient(#60686c 0%, #60686c 15%, #2a2d2f 33.33%, #161718 66.67%, #000000 100%);
+  background: linear-gradient(
+    #60686c 0%,
+    #60686c 15%,
+    #161718 66.67%,
+    #000000 100%
+  );
 }
 main.pointer-e:not(.container-info) {
   pointer-events: none;
@@ -127,7 +132,6 @@ main .grid-container {
   /* Espacio entre las películas */
 }
 main .grid-container .movie-card {
-  background-color: #520a0a;
   border: 1px solid #2a2d2f;
   border-radius: 20px;
   padding: 10px;
@@ -262,4 +266,11 @@ footer {
   width: 100%;
   height: 200px;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txt-footer {
+  color: white;
 }
