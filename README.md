@@ -16,6 +16,14 @@ Cinecodo es un proyecto que ofrece una interfaz web para la visualización y com
 - JavaScript
 - Bootstrap 5
 
+- <p align="left"> 
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> 
+    <img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="65" height="65"/> 
+  <a href="https://www.typescriptlang.org/" target="_blank"> 
+    <img src="https://devicons.github.io/devicon/devicon.git/icons/typescript/typescript-original.svg" alt="typescript" width="65" height="65"/> 
+  </a>
+</p>
+
 ## Estructura del Proyecto
 
 El proyecto consta de varias páginas y archivos importantes:
