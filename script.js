@@ -16,6 +16,7 @@ btnsInfo.forEach((btn) => {
     ctnInfo.classList.remove("close");
     ctnInfo.style.visibility = "visible";
     main.classList.add("pointer-e");
+    document.body.style.overflow="hidden";
   });
 });
 
@@ -24,6 +25,7 @@ btnClose.addEventListener("click", function () {
   ctnInfo.classList.remove("show");
   ctnInfo.classList.add("close");
   main.classList.remove("pointer-e");
+  document.body.style.overflow="auto";
 });
 
 /*Corrobora que haya finalizado una animacion*/
