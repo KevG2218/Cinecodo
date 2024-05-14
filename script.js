@@ -7,8 +7,8 @@ const btnsInfo = document.querySelectorAll(".movie-card"),
 /* Funcion que permite obtener el informacion de la pelicula seleccionada*/
 btnsInfo.forEach((btn) => {
   btn.addEventListener("click", function () {
-    tittleMovie = this.querySelector(".tittle-movie").textContent;
-    ctnInfo.querySelector(".tittle-info").textContent = tittleMovie;
+    tittleMovie = this.querySelector(".title-movie").textContent;
+    ctnInfo.querySelector(".title-info").textContent = tittleMovie;
     var movieInfo = this.querySelector(".movie-image").src;
     var pathImg = movieInfo.replace(/^.*\/\/[^\/]+/, "");
     ctnInfo.querySelector(".movie-selectimg").src = pathImg;
