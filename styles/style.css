@@ -20,7 +20,7 @@ header {
   color: white;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 100;
 }
 
 header .container-logo {
@@ -112,7 +112,8 @@ main .container-filter{
   gap: 2rem;
   display: flex;
   justify-content: center;
-  box-shadow: 0px 5px 150px #fff;
+  box-shadow: 0px 30px 100px #fff;
+  z-index: 90;
 }
 main .container-sucu {
   
@@ -135,6 +136,7 @@ main .container-sucu #sucu-droplist {
   cursor: pointer;
   background-color: #3b3b3b;
   color: white;
+  text-align: center;
 }
 main .grid-container {
   
@@ -159,10 +161,12 @@ main .grid-container .movie-card {
   /* Centrar el contenido */
   transition: transform 0.8s;
   cursor: pointer;
+  z-index: 70;
 }
 main .grid-container .movie-card:hover {
   transform: scale(1.09);
   background-color: #661d1d;
+  z-index: 80;
 }
 main .grid-container .movie-card:active {
   background-color: #1f0c0c;
@@ -200,6 +204,7 @@ main .container-info {
   overflow: hidden;
   display: flex;
   backdrop-filter: blur(5px);
+  z-index: 95;
 }
 @keyframes scale-up-center {
   0% {

@@ -17,6 +17,7 @@ btnsInfo.forEach((btn) => {
     ctnInfo.style.visibility = "visible";
     main.classList.add("pointer-e");
     document.body.style.overflow="hidden";
+    
   });
 });
 
