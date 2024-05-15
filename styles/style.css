@@ -99,16 +99,26 @@ main {
 main.pointer-e:not(.container-info) {
   pointer-events: none;
 }
-main .container-sucu {
-  width: 100%;
+main .container-filter{
+  margin-top: 1rem;
+  background-color: rgb(34, 38, 39,0.8);
+  width: 80%;
   height: 5vh;
-  background-color: #60686c;
+  display: flex;
+  border-radius: 10px;
+  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 5px 50px #fff;
+}
+main .container-sucu {
+  background-color: #38383898;
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  font-size: 1.5rem;
+  width: auto;
 }
 main .container-sucu label {
   padding-left: 10%;
@@ -119,7 +129,6 @@ main .container-sucu #sucu-droplist {
   width: 15vh;
   padding-left: 1rem;
   height: 80%;
-  font-size: 1rem;
   cursor: pointer;
   background-color: #3b3b3b;
   color: white;
