@@ -9,7 +9,14 @@ body {
   margin: 0;
   padding: 0;
 }
-body::-webkit-scrollbar {display: none;}
+body::-webkit-scrollbar {
+  width: 3px;
+  background-color: rgba(214, 214, 214, 0.493);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #363b3d;
+  border-radius: 10px;
+}
 
 header {
   position: fixed;
@@ -24,7 +31,7 @@ header {
 }
 
 header .container-logo {
-  width: auto;
+  width: 23vh;
   height: 100%;
   display: flex;
   align-items: center;
@@ -35,10 +42,11 @@ header .container-logo {
 }
 header .container-logo h1{
   padding-right: 1rem;
+  font-size: 3vh;
 }
 header .container-logo img {
-  width: 90px;
-  height: 90px;
+  width: 10vh;
+  height: 10vh;
 }
 header .container-search {
   width: 40%;
@@ -67,11 +75,11 @@ header .container-search .search-icon:active {
   transform: scale(1.1);
 }
 header .container-user {
+  width: 23vh;
+  height: 100%;
   display: flex;
   align-items: center;
   background-color: white;
-  width: 12%;
-  height: 100%;
   color: black;
   border-radius: 50px 0px 0px 50px;
   align-items: center;
@@ -86,43 +94,45 @@ header .container-user a {
 }
 
 main {
-  padding-top: 2.5%;
+  padding-top: 5vh;
   z-index: 10;
   background: linear-gradient(
     #60686c 0%,
     #60686c 15%,
     #161718 66.67%,
     #000000 100%
-  );
+    );
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 main.pointer-e:not(.container-info) {
   pointer-events: none;
 }
 main .container-filter{
   margin-top: 1rem;
   background-color: rgb(34, 38, 39,0.8);
-  width: 97%;
+  width: auto;
   height: 5vh;
   display: flex;
   border-radius: 10px;
-  gap: 2rem;
+  gap: 2vh;
   display: flex;
   justify-content: center;
+  
   box-shadow: 0px 30px 100px #fff;
   z-index: 90;
 }
 main .container-sucu {
-  
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
   width: auto;
+  padding-right: 1rem;
 }
 main .container-sucu label {
   padding-left: 10%;
@@ -130,7 +140,7 @@ main .container-sucu label {
 }
 main .container-sucu #sucu-droplist {
   border-radius: 10px;
-  width: 15vh;
+  width: 14vh;
   padding-left: auto;
   height: 80%;
   cursor: pointer;
@@ -138,6 +148,7 @@ main .container-sucu #sucu-droplist {
   color: white;
   text-align: center;
 }
+
 main .grid-container {
   
   width: 90%;
@@ -146,7 +157,7 @@ main .grid-container {
   padding-top: 20px;
   color: white;
   /* Crear una cuadrícula de 3 columnas */
-  grid-auto-rows: 30rem;
+  grid-auto-rows: 25rem;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   
   /* Espacio entre las películas */
@@ -249,7 +260,7 @@ main .container-info .info-movie {
   margin-left: 10%;
   width: 50%;
   height: 100%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
 }
@@ -308,3 +319,5 @@ footer {
 .txt-footer {
   color: white;
 }
+
+
