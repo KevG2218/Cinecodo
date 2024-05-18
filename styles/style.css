@@ -23,7 +23,7 @@ header {
   width: 100%;
   height: 6vh;
   display: flex;
-  background-color: #262a2b;
+  backdrop-filter: blur(25px);
   color: white;
   align-items: center;
   justify-content: space-between;
