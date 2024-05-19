@@ -3,10 +3,6 @@
 //de ellas estan orientadas a hacer algo en especifico en el index, lo que hace 
 //que en el login las funciones no sepan que hacer y el js colapsa
 
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-const botonLogin = document.getElementById('boton-login');
-
 
 // LOGIN: USUARIO CONTRASEÑA 1234
 
