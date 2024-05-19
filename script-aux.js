@@ -8,6 +8,10 @@ const password = document.getElementById('password');
 const botonLogin = document.getElementById('boton-login');
 
 
+// LOGIN: USUARIO CONTRASEÑA 1234
+
+
+
 document.addEventListener('DOMContentLoaded',()=> {
     const formulario = document.querySelector('form');
 
