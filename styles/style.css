@@ -10,20 +10,26 @@ body {
   padding: 0;
 }
 body::-webkit-scrollbar {
-  width: 3px;
+  width: 2px;
   background-color: rgba(214, 214, 214, 0.493);
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #363b3d;
+  background: linear-gradient(
+    #60686c 0%,
+    #60686c 15%,
+    #161718 66.67%,
+    #000000 100%
+  );
   border-radius: 10px;
 }
 
 header {
   position: fixed;
   width: 100%;
-  height: 6vh;
+  height: 6%;
   display: flex;
   backdrop-filter: blur(25px);
+  background-color: rgb(34, 38, 39, 0.5);
   color: white;
   align-items: center;
   justify-content: space-between;
@@ -40,7 +46,7 @@ header .container-logo {
   color: black;
   border-radius: 0px 50px 50px 0px;
 }
-header .container-logo h1{
+header .container-logo h1 {
   padding-right: 1rem;
   font-size: 3vh;
 }
@@ -101,7 +107,7 @@ main {
     #60686c 15%,
     #161718 66.67%,
     #000000 100%
-    );
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,9 +117,9 @@ main {
 main.pointer-e:not(.container-info) {
   pointer-events: none;
 }
-main .container-filter{
+main .container-filter {
   margin-top: 1rem;
-  background-color: rgb(34, 38, 39,0.8);
+  background-color: rgb(34, 38, 39, 0.8);
   width: auto;
   height: 5vh;
   display: flex;
@@ -121,7 +127,7 @@ main .container-filter{
   gap: 2vh;
   display: flex;
   justify-content: center;
-  
+
   box-shadow: 0px 30px 100px #fff;
   z-index: 90;
 }
@@ -150,7 +156,6 @@ main .container-sucu #sucu-droplist {
 }
 
 main .grid-container {
-  
   width: 90%;
   height: 100%;
   display: grid;
@@ -159,10 +164,9 @@ main .grid-container {
   /* Crear una cuadrícula de 3 columnas */
   grid-auto-rows: 25rem;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  
+
   /* Espacio entre las películas */
   gap: 5px;
-  
 }
 main .grid-container .movie-card {
   border: 1px solid #2a2d2f;
@@ -189,14 +193,7 @@ main .grid-container .movie-card .movie-image {
   /* Mantener la proporción de la imagen */
   border-radius: 20px;
 }
-main .grid-container .movie-card .buy-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-  text-decoration: none;
-}
+
 main .grid-container .movie-card .show-times {
   display: none;
   /* Ocultar los horarios por defecto */
@@ -208,13 +205,13 @@ main .container-info {
   visibility: hidden;
   width: 100%;
   height: 95%;
-  background-color: rgb(34, 38, 39,0.8);
-  color: white  ;
+  background-color: rgb(34, 38, 39, 0.5);
+  color: white;
   position: fixed;
   top: 5%;
   overflow: hidden;
   display: flex;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(25px);
   z-index: 95;
 }
 @keyframes scale-up-center {
@@ -251,10 +248,10 @@ main .container-info .movie-select {
   justify-content: center;
   align-items: center;
 }
-main .container-info .movie-select .movie-selectimg {
+
+main .container-info .movie-select img {
   width: 70%;
   height: 80%;
-  box-shadow: 10px 10px 100px;
 }
 main .container-info .info-movie {
   margin-left: 10%;
@@ -285,17 +282,20 @@ main .container-info .info-movie .container-buttons .btn-buy {
   width: 150px;
   height: 70px;
   cursor: pointer;
-  color: white;
   text-decoration: none;
-  background-color: black;
   text-align: center;
-  border-radius: 5px;
+  align-items: center;
+  background-color: rgb(212, 212, 212);
+  color: black;
+  border-radius: 20px;
+  font-weight: bold;
 }
 main .container-info .info-movie .container-buttons .btn-buy:hover {
-  background-color: #616161;
+  box-shadow: 1px 1px 20px #f8f8f8;
+  background-color: rgb(212, 212, 212);
 }
 main .container-info .info-movie .container-buttons .btn-buy:active {
-  background-color: #c5c5c5;
+  box-shadow: none;
 }
 main .container-info .btn-close {
   width: 50px;
@@ -304,7 +304,6 @@ main .container-info .btn-close {
   filter: drop-shadow(2px 2px 20px);
   margin-top: 1rem;
   margin-right: 1rem;
-  
 }
 
 footer {
@@ -320,4 +319,18 @@ footer {
   color: white;
 }
 
-
+@media only screen and (max-width: 400px) {
+  main .container-filter {
+    display: none;
+  }
+  main .grid-container {
+    width: 90%;
+    height: 100%;
+    display: grid;
+    padding-top: 20px;
+    color: white;
+    /* Crear una cuadrícula de 3 columnas */
+    grid-auto-rows: 15rem;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
+}
