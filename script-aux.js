@@ -1,11 +1,10 @@
-//Este script fue creado para probar el login, NO fucionar con script.js
-//el motivo es por que las funciones juntas generan error debido a que la mayoria 
-//de ellas estan orientadas a hacer algo en especifico en el index, lo que hace 
-//que en el login las funciones no sepan que hacer y el js colapsa
+// API UTILIZADA https://reqres.in/
+// USUARIO: eve.holt@reqres.in
+// CONTRASEÑA: cityslicka
 
-
-// LOGIN: USUARIO CONTRASEÑA 1234
-
+// * ANOTACIONES *
+// por algun motivo, cuando se prueba un error y luego se ingresa el usuario y la contraseña correctamente, hay que hacer 2 clicks aun no se por que.
+// falta mejorar la logica de validarFormulario ya que cuando validarPass() es la contraseña correcta pero el usuario es incorrecto, no muestra el mensaje de error correspondiente
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,9 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user === '') {
             mostrarError(aux, 'el usuario es obligatorio');
             return false;
-        } else if (user === "usuario") {
+        } else if (user === "eve.holt@reqres.in"){
             eliminarError(aux);
             return true;
+        } else{
+            return false;
         }
     }
 
@@ -50,16 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pass === '') {
             mostrarError(aux, 'la contraseña es obligatoria');
             return false;
-        } else if (pass === "1234") {
+        } else if (pass === "cityslicka"){
             eliminarError(aux);
             return true;
+        } else{
+            mostrarError(aux, mensaje);
+            return false;
         }
     }
 
     const validarFormulario = () => {
         let validar = true;
-        validar = validarUsuario('username', 'el usuario no es valido') && validar;
-        validar = validarPass('password', 'el usuario no es valido') && validar;
+        validar = validarUsuario('username') && validar;
+        validar = validarPass('password','Usuario o contraseña incorrectos') && validar;
         return validar;
     }
 
@@ -73,17 +77,41 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
-    formulario.addEventListener('submit', event => {
+    formulario.addEventListener('submit',async event => {
         event.preventDefault();
         if (!validarFormulario()) {
             event.preventDefault();
-        } else {
-            redirec();
         }
-    })
+        else{
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
+                const token = await iniciarSesion(user,pass);
+                console.log('Token de autenticación:', token);
+                //si se comenta redirec() se puede ver el recibimiento del token de la api
+                redirec();
+        }
+    });
+
+    // se compara el usuario ingresado con el de la api mediante un post
+    async function iniciarSesion(user,pass){
+        const login = {
+            email: user,
+            password: pass
+        };
+
+        const aux = await fetch('https://reqres.in/api/login', {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(login)
+        });
+        const resultado = await aux.json();
+        return resultado.token;
+    }
 
     //redireccion al index.html
     function redirec() {
         window.location.href = 'index.html';
     }
-})
+});
