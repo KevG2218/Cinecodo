@@ -55,3 +55,9 @@
 .ayuda{
   margin-left: 35%;
 }
+
+.error-text{
+  margin-top: 3%;
+  margin-left: 21%;
+  color: red;
+}
