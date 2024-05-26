@@ -1,5 +1,3 @@
-
-
 const btnsInfo = document.querySelectorAll(".movie-card"),
   btnClose = document.querySelector(".btn-close"),
   ctnInfo = document.querySelector(".container-info"),
