@@ -1,3 +1,5 @@
+import { getDetailsMovie } from "./APImovies.js";
+
 const btnsInfo = document.querySelectorAll(".movie-card"),
   btnClose = document.querySelector(".btn-close"),
   ctnInfo = document.querySelector(".container-info"),
@@ -42,6 +44,10 @@ ctnInfo.addEventListener("animationend", function (event) {
 document.querySelector(".grid-container").addEventListener("click", function (e) {
   if (e.target.closest(".movie-card")) {
     const movieCard = e.target.closest(".movie-card");
+
+    const idMovie = movieCard.getAttribute('data-id');
+    getDetailsMovie(idMovie);
+
     const tittleMovie = movieCard.querySelector(".title-movie").textContent;
     const ctnInfo = document.querySelector(".container-info");
     const main = document.querySelector("main");
