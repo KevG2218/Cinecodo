@@ -7,7 +7,7 @@ const options = {
   },
 };
 
-fetch("https://api.themoviedb.org/3/trending/movie/week", options)
+fetch("https://api.themoviedb.org/3/movie/top_rated", options)
   .then((response) => response.json())
   .then((response) => createMovie(response.results))
   .catch((err) => console.error(err));
