@@ -22,19 +22,46 @@ body::-webkit-scrollbar-thumb {
   );
   border-radius: 10px;
 }
+header {
+  position: fixed;
+  display: flex;
+  backdrop-filter: blur(25px);
+  background-color: rgb(34, 38, 39, 0.5);
+  color: white; 
+  z-index: 100;
+}
 
-@media only screen and (min-width: 1360px) {
+header .container-user{
+  display: none;
+}
+
+header .container-search{
+  display: none;
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale-down-center {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@media only screen and (min-width: 1019px) {
   header {
-    position: fixed;
     width: 100%;
     height: 6%;
-    display: flex;
-    backdrop-filter: blur(25px);
-    background-color: rgb(34, 38, 39, 0.5);
     color: white;
     align-items: center;
     justify-content: space-between;
-    z-index: 100;
   }
 
   header .container-logo {
@@ -128,7 +155,6 @@ body::-webkit-scrollbar-thumb {
     gap: 2vh;
     display: flex;
     justify-content: center;
-
     box-shadow: 0px 30px 100px #fff;
     z-index: 90;
   }
@@ -215,22 +241,7 @@ body::-webkit-scrollbar-thumb {
     backdrop-filter: blur(25px);
     z-index: 95;
   }
-  @keyframes scale-up-center {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes scale-down-center {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
+  
   main .container-info.show {
     animation: scale-up-center 0.4s;
     pointer-events: auto;
@@ -324,8 +335,51 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 1360px) and (min-width: 767px) and (orientation: portrait) {
 }
 @media only screen and (max-width: 400px) and (orientation: portrait) {
+  header{
+    position: fixed;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row ;
+    
+  }
+  header .container-logo{
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+  }
+  header .container-logo h1 {
+    width: 8rem;
+    color: black;
+  }
+  header .container-logo img {
+    width: 10vh;
+    height: 10vh;
+  }
   main .container-filter {
     display: none;
+  }
+
+
+  main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    padding-top: 5vh;
+    z-index: 10;
+    background: linear-gradient(
+      #60686c 0%,
+      #60686c 15%,
+      #161718 66.67%,
+      #000000 100%
+    );
+    
   }
   main .grid-container {
     width: 90%;
@@ -334,10 +388,143 @@ body::-webkit-scrollbar-thumb {
     padding-top: 20px;
     color: white;
     /* Crear una cuadrícula de 3 columnas */
-    grid-auto-rows: 15rem;
+    grid-auto-rows: 19rem;
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+
+    /* Espacio entre las películas */
+    gap: 5px;
   }
-  .container-info {
-    flex-direction: row;
+  main .grid-container .movie-card {
+    border: 1px solid #2a2d2f;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    /* Centrar el contenido */
+    transition: transform 0.8s;
+    cursor: pointer;
+    z-index: 70;
+  }
+  main .grid-container .movie-card:active {
+    background-color: #1f0c0c;
+  }
+  main .grid-container .movie-card .movie-image {
+    max-width: 100%;
+    /* Ajustar la imagen al ancho del contenedor */
+    height: 80%;
+    /* Mantener la proporción de la imagen */
+    border-radius: 20px;
+  }
+  main .container-info {
+    visibility: hidden;
+    width: 100%;
+    height: 95%;
+    background-color: rgb(34, 38, 39, 0.5);
+    color: white;
+    position: fixed;
+    top: 5%;
+    backdrop-filter: blur(25px);
+    overflow: scroll;
+    z-index: 95;
+  }
+  
+  main .container-info.show {
+    animation: scale-up-center 0.4s;
+    pointer-events: auto;
+    transition: opacity 0.5s ease, visibility 0s linear;
+    opacity: 1;
+  }
+  main .container-info.close {
+    animation: scale-down-center 0.4s;
+    transition: opacity 0.5s ease, visibility 0s linear;
+    opacity: 1;
+  }
+  main .container-info .movie-select {
+    margin-top: 20px;
+    max-height: 100%;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .container-info .movie-select img {
+    width: 50%;
+    height: 80%;
+    box-shadow: 5px 10px 30px #000000;
+  }
+  main .container-info .info-movie {
+    margin: 10px 10px 10px 10px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  main .container-info .title-info{
+    text-align: center;
+  }
+  main .container-info .info-movie .info-timetables {
+    width: 100%;
+    height: 5%;
+    font-size: 1rem;
+    padding-top: 1.5rem;
+  }
+  main .container-info .info-movie .info-timetables #radio-btn {
+    cursor: pointer;
+    background-color: gray;
+  }
+  main .container-info .info-movie .description-movie {
+    padding-bottom: 1rem;
+  }
+  main .container-info .info-movie p {
+    margin: 0;
+  }
+  main .container-info .info-movie .container-buttons{
+    display: flex;
+    justify-content: center;
+  }
+  main .container-info .info-movie .container-buttons .btn-buy {
+    margin-top: 10px;
+    display: flex;
+    width: 150px;
+    height: 70px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(212, 212, 212);
+    color: black;
+    border-radius: 20px;
+    font-weight: bold;
+    
+  }
+  main .container-info .info-movie .container-buttons .btn-buy:hover {
+    box-shadow: 1px 1px 20px #f8f8f8;
+    background-color: rgb(212, 212, 212);
+  }
+  main .container-info .info-movie .container-buttons .btn-buy:active {
+    box-shadow: none;
+  }
+  main .container-info .btn-close {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 20px);
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  footer {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .txt-footer {
+    color: white;
   }
 }
