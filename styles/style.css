@@ -334,7 +334,7 @@ header .container-search{
 }
 @media only screen and (max-width: 1360px) and (min-width: 767px) and (orientation: portrait) {
 }
-@media only screen and (max-width: 400px) and (orientation: portrait) {
+@media only screen and (max-width: 800px) and (orientation: portrait) {
   header{
     position: fixed;
     width: 100%;
@@ -449,8 +449,8 @@ header .container-search{
   }
 
   main .container-info .movie-select img {
-    width: 50%;
-    height: 80%;
+    width: 30vh;
+    height: 100%;
     box-shadow: 5px 10px 30px #000000;
   }
   main .container-info .info-movie {
