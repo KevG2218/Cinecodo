@@ -51,11 +51,11 @@ export function getDetailsMovie(idMovie) {
       response.cast.map((person) => {
         
       if (person.known_for_department == "Acting" && i<=10) {
-        actorsMovie.innerHTML += `<a> ${person.original_name}</a>` + ", ";
+        actorsMovie.innerHTML += `<a> ${person.name}</a>` + ", ";
         i++;
       }
       if(person.known_for_department == "Directing"){
-        directorMovie.innerHTML+=`<a> ${person.original_name}</a>`;
+        directorMovie.innerHTML+=`<a> ${person.name}</a>`;
       }
       
     })})
