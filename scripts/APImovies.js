@@ -12,10 +12,15 @@ fetch("https://api.themoviedb.org/3/movie/popular", options)
   .then((response) => createMovie(response.results))
   .catch((err) => console.error(err));
 
+  
 export function getDetailsMovie(idMovie) {
   const descriptionMovie = document.querySelector(".description-movie"),
     runtimeMovie = document.querySelector(".runtime-movie"),
-    genreMovie = document.querySelector(".genre-movie");
+    genreMovie = document.querySelector(".genre-movie"),
+    actorsMovie = document.querySelector(".actors-movie"),
+    directorMovie=document.querySelector(".director-movie");
+
+    let i=0;
 
   fetch(`https://api.themoviedb.org/3/movie/${idMovie}`, options)
     .then((response) => response.json())
@@ -26,14 +31,34 @@ export function getDetailsMovie(idMovie) {
     })
     .catch((err) => console.error(err));
 
-  genreMovie.innerHTML ="<strong>Genero: </strong>";
+  genreMovie.innerHTML = "<strong>Genero: </strong>";
   fetch(`https://api.themoviedb.org/3/movie/${idMovie}`, options)
     .then((response) => response.json())
     .then((response) => {
-      response.genres.map((genre)=>{
-        genreMovie.innerHTML+=genre.name+", ";
-      })
+      response.genres.map((genre) => {
+        genreMovie.innerHTML += genre.name + ", ";
+      });
     })
+    .catch((err) => console.error(err));
+
+  actorsMovie.innerHTML="<Strong>Reparto:</Strong>"
+  fetch(
+    `https://api.themoviedb.org/3/movie/${idMovie}/credits?language=en-US`,
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      response.cast.map((person) => {
+        
+      if (person.known_for_department == "Acting" && i<=10) {
+        actorsMovie.innerHTML += `<a> ${person.original_name}</a>` + ", ";
+        i++;
+      }
+      if(person.known_for_department == "Directing"){
+        directorMovie.innerHTML+=`<a> ${person.original_name}</a>`;
+      }
+      
+    })})
     .catch((err) => console.error(err));
 }
 
@@ -42,7 +67,9 @@ function createMovie(data) {
   data.map((element) => {
     const articleMovie = `
             <article class="movie-card" data-id="${element.id}">
-                <img src="${"https://image.tmdb.org/t/p/original/" + element.poster_path}" alt="Película Imagen" class="movie-image">
+                <img src="${
+                  "https://image.tmdb.org/t/p/original/" + element.poster_path
+                }" alt="Película Imagen" class="movie-image">
                 <p class="title-movie">${element.original_title}</p>
             </article>`;
     document.querySelector(".grid-container").innerHTML += articleMovie;
