@@ -12,15 +12,14 @@ fetch("https://api.themoviedb.org/3/movie/popular", options)
   .then((response) => createMovie(response.results))
   .catch((err) => console.error(err));
 
-  
 export function getDetailsMovie(idMovie) {
   const descriptionMovie = document.querySelector(".description-movie"),
     runtimeMovie = document.querySelector(".runtime-movie"),
     genreMovie = document.querySelector(".genre-movie"),
     actorsMovie = document.querySelector(".actors-movie"),
-    directorMovie=document.querySelector(".director-movie");
+    directorMovie = document.querySelector(".director-movie");
 
-    let i=0;
+  let i = 0;
 
   fetch(`https://api.themoviedb.org/3/movie/${idMovie}`, options)
     .then((response) => response.json())
@@ -41,7 +40,8 @@ export function getDetailsMovie(idMovie) {
     })
     .catch((err) => console.error(err));
 
-  actorsMovie.innerHTML="<Strong>Reparto:</Strong>"
+  actorsMovie.innerHTML = "<Strong>Reparto:</Strong>";
+  directorMovie.innerHTML = "<Strong>Director:</Strong>";
   fetch(
     `https://api.themoviedb.org/3/movie/${idMovie}/credits?language=en-US`,
     options
@@ -49,16 +49,20 @@ export function getDetailsMovie(idMovie) {
     .then((response) => response.json())
     .then((response) => {
       response.cast.map((person) => {
-        
-      if (person.known_for_department == "Acting" && i<=10) {
-        actorsMovie.innerHTML += `<a> ${person.name}</a>` + ", ";
-        i++;
-      }
-      if(person.known_for_department == "Directing"){
-        directorMovie.innerHTML+=`<a> ${person.name}</a>`;
-      }
-      
-    })})
+        if (person.known_for_department == "Acting" && i <= 10) {
+          actorsMovie.innerHTML += `<a> ${person.name}</a>`;
+          if (i == 10) {
+            actorsMovie.innerHTML += ".";
+          } else {
+            actorsMovie.innerHTML += ", ";
+          }
+          i++;
+        }
+        if (person.known_for_department == "Directing") {
+          directorMovie.innerHTML += `<a> ${person.name}</a>`;
+        }
+      });
+    })
     .catch((err) => console.error(err));
 }
 
