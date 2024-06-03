@@ -39,6 +39,26 @@ header .container-search{
   display: none;
 }
 
+.container-typemovies{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-typemovies .title-typemovies{
+  width: 90%;
+  height: 5vh;
+  background-color:   #70707048;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
 @keyframes scale-up-center {
   0% {
     transform: scale(0);
@@ -186,7 +206,6 @@ header .container-search{
     width: 90%;
     height: 100%;
     display: grid;
-    padding-top: 20px;
     color: white;
     /* Crear una cuadrícula de 3 columnas */
     grid-auto-rows: 25rem;
@@ -417,6 +436,7 @@ header .container-search{
   main .container-info {
     visibility: hidden;
     width: 100%;
+    /*max-height: calc(100vh - 10%);*/
     height: 95%;
     background-color: rgb(34, 38, 39, 0.5);
     color: white;
@@ -449,7 +469,7 @@ header .container-search{
   }
 
   main .container-info .movie-select img {
-    width: 30vh;
+    width: 26vh;
     height: 100%;
     box-shadow: 5px 10px 30px #000000;
   }
