@@ -39,6 +39,10 @@ header .container-search{
   display: none;
 }
 
+.container-billboard{
+  width: 100%;
+}
+
 .container-typemovies{
   width: 100%;
   display: flex;
