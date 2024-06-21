@@ -413,6 +413,9 @@ header .container-search{
     /* Espacio entre las películas */
     gap: 5px;
   }
+  main .container-billboard{
+    width: 95%;
+  }
   main .grid-container .movie-card {
     border: 1px solid #2a2d2f;
     border-radius: 20px;
